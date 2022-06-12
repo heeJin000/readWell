@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "TIL",
+			"path": "../../../../local/TIL"
+		},
+		{
+			"path": "../../goodreader"
+		},
+		{
+			"path": "../../reactproject"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
