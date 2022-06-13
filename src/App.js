@@ -1,17 +1,24 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+import Title from "./Components/Title";
+import Content from "./Components/Content.js";
+import ApiCall from "./Components/ApiCall.js";
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          readWell
-        </p>        
-      </header>
+      
+        <Title></Title>        
+      
+        <Content></Content>
+
+        <Content></Content>
+
+
+        <ApiCall></ApiCall>
+
     </div>
   );
 }
-
 export default App;
