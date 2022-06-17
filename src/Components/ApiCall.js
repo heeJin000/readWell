@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 //import React, {Component} from 'react';
 
-
+function ApiCall(){
 const ApiCall = () => {
   axios.defaults.withCredentials = true;
       useEffect(()=> {
@@ -17,7 +17,7 @@ const ApiCall = () => {
           });
         });
     }  
-
+}
 
 
 export default ApiCall;
