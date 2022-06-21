@@ -15,8 +15,7 @@ const App = () => {
 
         <Content></Content>
 
-
-        <ApiCall/>
+        <ApiCall></ApiCall>
 
     </div>
   );
