@@ -3,11 +3,11 @@ import React, {useState, useEffect} from 'react';
 
 function ApiCall(){
 
-  const [api, setApi] = useState(null);
-  const [loading,setLoading] = useState(false); // 로딩되는지 여부
-  const [error,setError] = useState(null); //에러
-
+  
   const ApiCall = async() => {
+    const [api, setApi] = useState(null);
+    const [loading,setLoading] = useState(false); // 로딩되는지 여부
+    const [error,setError] = useState(null); //에러
     try{
       setApi(null);
       setError(null);
@@ -20,9 +20,9 @@ function ApiCall(){
     }
     setLoading(false);
 
-        useEffect(()=> {
+        /*useEffect(()=> {
           ApiCall();
-        }, [])
+        }, [])*/
           if(loading) return <div>로딩 중...</div>
           if(error)   return <div>에러가 발생했습니다</div>
           if(!api)    return null;
