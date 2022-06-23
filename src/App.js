@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {render} from 'react-dom';
 import Title from "./Components/Title";
 import Content from "./Components/Content.js";
 import ApiCall from "./Components/ApiCall.js";
