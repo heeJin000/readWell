@@ -6,6 +6,7 @@ import asset from '../asset.js';
 const ApiCall = () => {
   const [data, setData] = useState({});
   const apiKey = asset.apiKey; 
+  
   useEffect(() => {
     const getApi = async() => {
       const request = await axios.get(
@@ -13,12 +14,13 @@ const ApiCall = () => {
         `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
       )
       const requestJson = await request;
-      console.log("json", requestJson);
+
+      if(!requestJson) console.log('데이터가 존재하지 않습니다.');
+
+      console.log(requestJson);
       setData(requestJson);
     };
     getApi();
   }, []);
-
-    console.log(data)
 }
 export default ApiCall;
