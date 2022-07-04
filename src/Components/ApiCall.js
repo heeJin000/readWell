@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState ,useEffect } from 'react';
 import asset from '../asset.js';
-//import React, {useState, useEffect} from 'react';
+
 
 const ApiCall = () => {
   const [data, setData] = useState({});
