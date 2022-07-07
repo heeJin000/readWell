@@ -4,12 +4,21 @@ import asset from '../asset.js';
 
 
 const ApiCall = () => {
-  const apiKey = asset.apiKey;  
-  const response = axios.get(
-    `http://localhost:3000/`, 
-    `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
-    ).then(response => {
-        console.log(response.data);
-      });
-}  
+  const [data, setData] = useState({});
+  const apiKey = asset.apiKey; 
+  useEffect(() => {
+    const getApi = async() => {
+      const request = await axios.get(
+        `http://localhost:3000/`, 
+        `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
+      )
+      console.log(request);
+      setData(request);
+    };
+    getApi();
+  }, []);
+    if(data == null) console.log('값을 불러올 수 없습니다.');
+    
+    console.log(data)
+} 
 export default ApiCall;
