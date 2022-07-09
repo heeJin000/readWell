@@ -5,6 +5,7 @@ import asset from '../asset.js';
 
 const ApiCall = () => {
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
   const apiKey = asset.apiKey; 
   useEffect(() => {
     const getApi = async() => {
