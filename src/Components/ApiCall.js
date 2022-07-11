@@ -8,16 +8,16 @@ const ApiCall = () => {
   const [loading, setLoading] = useState(false);
   const apiKey = asset.apiKey; 
   useEffect(() => {
-    //const getApi = async() => {
-      /*const request =*/ axios.get(
+    const getApi = async() => {
+      const request = await axios.fetch(
         `http://localhost:3000/`, 
         `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
-      ).then((response) => {
-        setData(response.data);
+      ).then((request) => {
+        setData(request.text());
       });
       //console.log(request);
-    //};
-    //getApi();
+    };
+    getApi();
   }, []);
     if(data == null) console.log('값을 불러올 수 없습니다.');
     
