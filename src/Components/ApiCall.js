@@ -15,7 +15,7 @@ const ApiCall = () => {
         ).then(request => {
         setData(request.data);
       });
-      //console.log(request);
+      console.log(request);
     };
     getApi();
   }, []);
