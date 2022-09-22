@@ -8,17 +8,16 @@ const ApiCall = () => {
   const [loading, setLoading] = useState(false);
   const apiKey = asset.apiKey; 
 
-  const getApi = async() => {
-        const request = await axios.get(
-          `http://localhost:3000/`, 
-          `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
-          ).then(answer =>
-          setData(answer.data)
-        );
-        console.log(data);
-      };
+  
+  const getApi = new Promise((resolve, reject) => {
+    resolve = axios.get(
+    `http://localhost:3000/`, 
+    `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
+    )}
+  );
+
   useEffect(() => {    
-    getApi();
+    getApi.then(setData());
   }, []);
     
   if(data == null) console.log('값을 불러올 수 없습니다.');
