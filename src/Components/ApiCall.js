@@ -9,16 +9,15 @@ const ApiCall = () => {
   const apiKey = asset.apiKey; 
 
   
-  const getApi = new Promise((resolve, reject) => {
-      resolve = await axios.get(
+  const getApi = async() => {
+      await axios.get(
       `http://localhost:3000/`, 
       `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
-      ).then()
+      ).then((request) => {setData(request)}) 
     }
-  );
 
   useEffect(() => {    
-    getApi.then(setData());
+    getApi()
   }, []);
     
   if(data == null) console.log('데이터가 없습니다.');
