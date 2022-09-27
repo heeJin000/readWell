@@ -22,6 +22,6 @@ const ApiCall = () => {
     
   if(data == null) console.log('데이터가 없습니다.');
     
-  console.log(data)
+  console.log(data.data)
 } 
 export default ApiCall;
