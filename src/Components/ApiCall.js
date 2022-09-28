@@ -9,19 +9,18 @@ const ApiCall = () => {
   const apiKey = asset.apiKey; 
 
   
-  const getApi = async() => {
-      await axios.get(
-      `http://localhost:3000/`, 
-      `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
-      ).then((request) => {setData(request)}) 
-    }
+  const getApi = () => {
+        return axios.get(
+        `http://localhost:3000/`, 
+        `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
+        )}
 
   useEffect(() => {    
-    getApi()
+    getApi().then((response) => {setData(response)});
   }, []);
     
   if(data == null) console.log('데이터가 없습니다.');
     
-  console.log(data.data)
+  console.log(data.data);
 } 
 export default ApiCall;
