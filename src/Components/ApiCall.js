@@ -10,12 +10,16 @@ const ApiCall = () => {
   useEffect(() => {    
     axios({
       method : 'GET',
-      url: `https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
-    }).then(request => {setData(request.data)});
+      url: `/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
+    }).then(request => setData(request.data))
+    .catch(error => console.log(error.response));
   }, []);
 
   return(
     console.log(data)
+    
+   // <li>{data.title}{data.author}</li>
+
   );
   
   
