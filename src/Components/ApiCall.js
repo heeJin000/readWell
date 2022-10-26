@@ -9,10 +9,9 @@ const ApiCall = () => {
   const apiKey = asset.apiKey; 
   
   useEffect(() => {    
-    axios({
-      method : 'GET',
-      url: `/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
-    }).then((request) => {
+    axios.get(
+      `/ttb/api/ItemList.aspx?ttbkey=${apiKey}&QueryType=ItemNewAll&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101`
+    ).then((request) => {
       let xml = new XMLParser().parseFromString(request.data);
       setData(xml);
     })
@@ -21,8 +20,6 @@ const ApiCall = () => {
 
   return(
     console.log(data)
-    
-
   );
   
   
