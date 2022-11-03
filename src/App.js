@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Title from "./Components/Title";
-import Content from "./Components/Content.js";
+import Thumbnail from "./Components/Thumbnail.js";
 import ApiCall from "./Components/ApiCall.js";
 import './App.css';
 
@@ -10,9 +10,9 @@ const App = () => {
       
         <Title></Title>        
       
-        <Content></Content>
-
-        <Content></Content>
+        <Thumbnail></Thumbnail>
+    
+        <Thumbnail></Thumbnail>
 
         <ApiCall></ApiCall>
 

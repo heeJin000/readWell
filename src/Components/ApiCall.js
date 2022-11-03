@@ -19,7 +19,7 @@ const ApiCall = () => {
   }, []);
 
   return(
-    console.log(data)
+      console.log(data)
   );
   
   
