@@ -18,9 +18,10 @@ const ApiCall = () => {
     .catch(error => console.log(error.response));
   }, []);
 
-  return(
-      console.log(data)
-  );
+  return <ul> {data.map(value => {
+    <li key={value.id}> {value.title} </li>
+    })}
+  </ul>
   
   
 } 
