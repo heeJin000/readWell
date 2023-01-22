@@ -20,9 +20,10 @@ const ApiCall = () => {
     })}
       ).catch(error => console.log(error.response));
     }, [])
-  };
-    /*return(
+    return(
       console.log(data)
-    );*/
-
+    );
+  };
+    
 export default ApiCall;
+
