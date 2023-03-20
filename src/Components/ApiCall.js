@@ -7,9 +7,9 @@ import Title from './Title.js';
 
 
 const ApiCall = () => {
-  const [data, setData] = useState({ returnArr:['initialization'],});  
+  const [data, setData] = useState([]);  // returnArr:['initialization'],
   const apiKey = asset.apiKey; 
-  let listItems = [];
+  //const listItems = null;
   //const [listItems, setListItems] = useState([]);
 
   useEffect(() => {    
@@ -19,16 +19,20 @@ const ApiCall = () => {
       let xml = new XMLParser().parseFromString(request.data);
       //console.log('안녕하세요', xml.children);
       setData(() => { 
-        return {returnArr:xml.children.slice(11),}
+        return (xml.children.slice(11))
       })
-      listItems.push(data);
     }
-  ).catch(error => console.log(error.response));
+  ).catch(error => console.log(error));
 }, [])
     return( 
-      listItems.map((value)=>{
-        return <li>{value}</li>
-      })
+     <ul className="data_list">
+       {data.map(response => {
+         return(
+         <li key={response.attributes.itemId}>
+           title: {response.children[0].value} 
+         </li>
+        )})}
+     </ul>
     );
   };
     
