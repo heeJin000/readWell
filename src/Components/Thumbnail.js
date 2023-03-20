@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import ApiCall from './ApiCall';
 
 const Thumbnail = () => {
-    return(
-            <header>
-                <p> row </p>
-                <ApiCall/>
-            </header>
-    );
+    //return(
+    
+    //)
 }
 export default Thumbnail;
